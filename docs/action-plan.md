@@ -29,7 +29,7 @@ For each source: can we programmatically fetch it, what are the inputs/outputs, 
 
 | # | Source | What we pull | Known friction to test | Status |
 |---|--------|--------------|------------------------|--------|
-| F1 | **Dishaank** (app-only) | Lat/long → survey number + present owner + satellite view | No website; need its underlying API/endpoint or an SSLR equivalent | ☐ |
+| F1 | **Dishaank** (app-only) | Lat/long → survey number + present owner + satellite view | No website; need its underlying API/endpoint or an SSLR equivalent | ✅ **Partially feasible** — see [`feasibility/F1-dishaank.md`](feasibility/F1-dishaank.md). Survey-number half works via KSRSAC K-GIS `getlocationdetails` API; owner half is F2 (Bhoomi). Caveats: India-only egress + likely non-commercial/whitelisted terms. Next: India-egress spike on 20–30 pins + email KSRSAC. |
 | F2 | **Bhoomi** | Survey number → RTC/owner, dispute/stay entries | Login + OTP; multi-field input (district/taluk/hobli/village) | ☐ |
 | F3 | **Kaveri** | EC search (by survey no. / boundaries / owner name) → transaction table + document numbers; auto-apply for CC | Login; government fee payment; ~3-day sub-registrar approval on CCs — test how fast retrieval can really be | ☐ |
 | F4 | **CDP / Master Plans** | Zone polygons (Bangalore Urban first) | PDF/scan from the authority site; georeferencing onto Google Maps at high accuracy (beat Landeed's ~80%) | ☐ |
