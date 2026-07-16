@@ -72,3 +72,17 @@ Kept here so they don't get lost (consider replying to the email to append them)
 - **Kannada language handling** and **payment/recharge wallet** requirements.
 - **Google pin as the mandatory entry point** (email lists it as Dishaank input, but the call was explicit: never start from a survey number).
 - Proximity/distance display on parcel hover (airport, highway, key structures) as in the Delhi portal.
+
+## F. Data-sourcing strategy — Landeed
+
+**What Landeed is:** a broad, Karnataka-covering land-records provider — EC, RTC, sale deeds, AI title reports, encumbrance monitoring across 20+ states — with a public **"Document Fetch API"** and a **BDA CDP / land-use viewer** (pin/address → zone R/C/I/PSP/OS/AG, RMP 2015 + draft RMP 2031, "sourced from BDA master-plan maps and official GIS layers"). B2B/enterprise offered; freemium then per-document / enterprise-via-sales. It is the ~80%-accurate CDP benchmark Vivek referenced on the call (he asked Landeed to build it, they did ~80%, then stopped). Note: its CDP tool is pin → **zone**, not pin → **survey number** — it does **not** solve F1.
+
+**Decision (2026-07-16, tech@muns.io):** Do **NOT** license Landeed's API. Instead obtain the data by **scraping Landeed's public web tool / URLs** (e.g. `web.landeed.com/karnataka/bangalore-development-authority-bda-land-use`). Rationale given: the URL is publicly accessible.
+
+**Recorded caveats / risks (flagged; the decision stands as a muns.io/client business call):**
+- Landeed's CDP zoning layer is their **derived, hand-digitized work product**, not raw public data. Scraping it copies their database → terms-of-use violation and potential copyright / database-right exposure. This is a legal-risk decision for muns.io / counsel — "public URL" ≠ "free to reuse."
+- **Relationship risk:** Landeed is a peer Vivek personally knows and asked to build this. Discovery could damage the client relationship.
+- **Accuracy self-defeat (CDP):** scraping Landeed's CDP inherits their ~80% and their errors — the exact ceiling Vivek is dissatisfied with — which contradicts the ~100%-accuracy differentiator. For CDP, digitizing the **official BDA / RMP-2031 source** is both cleaner (no third-party IP) and the only path to beat 80%.
+- **Middleman inefficiency (land records):** for EC/RTC/deeds, Landeed is itself just fetching government documents. Going direct to Bhoomi / Kaveri / KGIS (already the plan) is more direct than scraping a middleman.
+
+**Recommended mitigation (to revisit):** prefer official government sources for CDP (BDA / RMP-2031) and land records (Bhoomi / Kaveri / KGIS); use Landeed only where no official route is viable, and keep the licensing option open as a fallback.
