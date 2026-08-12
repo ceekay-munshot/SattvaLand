@@ -64,7 +64,7 @@ For each source: can we programmatically fetch it, what are the inputs/outputs, 
 
 Kept here so they don't get lost (consider replying to the email to append them):
 
-- **Conversion status extraction** from sale deeds (the Bhoomi/Dishaank blind spot Vivek stressed).
+- **Conversion status extraction** from sale deeds (the Bhoomi/Dishaank blind spot Vivek stressed) — sourcing worked out in [`feasibility/F6-conversion.md`](feasibility/F6-conversion.md): primary = deed/EC (Kaveri), free cross-check = RTC mutation (Bhoomi), authoritative fallback = DC/Tahsildar office (traceable from just the survey number). No clean survey-number → conversion-order portal exists.
 - **Dispute/court-stay check** via Bhoomi as part of the legal screen.
 - **Dynamic growth scoring + 24/7 monitoring/notifications** (the Delhi-portal behavior to replicate).
 - **Favorites + rejection tracking with reasons + ~3-month rejection revisits + worked-parcel history.**
@@ -86,3 +86,9 @@ Kept here so they don't get lost (consider replying to the email to append them)
 - **Middleman inefficiency (land records):** for EC/RTC/deeds, Landeed is itself just fetching government documents. Going direct to Bhoomi / Kaveri / KGIS (already the plan) is more direct than scraping a middleman.
 
 **Recommended mitigation (to revisit):** prefer official government sources for CDP (BDA / RMP-2031) and land records (Bhoomi / Kaveri / KGIS); use Landeed only where no official route is viable, and keep the licensing option open as a fallback.
+
+## G. Commercials, proposal & positioning
+
+- **Pricing model & positioning:** [`strategy/pricing-and-positioning.md`](strategy/pricing-and-positioning.md) — the flat model (₹5,00,000/mo platform + ₹3,00,000/mo new-build add-on → ₹8,00,000/mo for the first 3 months, then ₹5,00,000/mo), the land-and-expand thesis, comparables (Palantir / Bloomberg / Harvey), and the "diagnose · build · deploy" framing.
+- **Client proposal (Sattva Group, Bangalore):** [`proposals/sattva-proposal.md`](proposals/sattva-proposal.md) + rendered `proposals/Munshot-Sattva-Proposal.pdf` (4 pages).
+- **Open naming question:** vendor/platform written as **"Munshot"** (per muns.io); client once wrote "Moonshot platform" — confirm before sending client-facing docs.

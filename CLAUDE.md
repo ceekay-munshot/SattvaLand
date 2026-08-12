@@ -26,6 +26,14 @@ A land-intelligence portal for Karnataka (Bangalore Urban, Bangalore Rural, Myso
 - Some portal content is in **Kannada**; some flows need **payment (recharge wallet is acceptable — cost is not a concern)**.
 - Parcel workflow: favorites, **rejection tracking with reasons**, full worked-parcel history, periodic (~3-month) revisit of rejections.
 
+## Repo docs
+
+- `docs/action-plan.md` — source of truth for scope; feasibility statuses, decisions, open questions.
+- `docs/feasibility/` — per-check findings: `F1-dishaank.md` (pin→survey via KSRSAC K-GIS), `F6-conversion.md` (conversion status: deed/EC primary, RTC cross-check, DC office fallback).
+- `docs/strategy/pricing-and-positioning.md` — commercial model (flat ₹5L/mo platform + ₹3L/mo new-build add-on → ₹8L for first 3 months, then ₹5L), land-and-expand thesis, comparables (Palantir/Bloomberg/Harvey).
+- `docs/proposals/` — client proposal for **Sattva Group (Bangalore)**: `sattva-proposal.md` + rendered `Munshot-Sattva-Proposal.pdf`.
+- Open naming question: vendor/platform written as **"Munshot"** (per muns.io); client once wrote "Moonshot platform" — confirm before finalising client-facing docs.
+
 ## Conventions
 
 - Repo was empty at project start; this file and `docs/action-plan.md` are the founding documents.
